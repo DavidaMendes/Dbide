@@ -6,6 +6,7 @@ from db import Base
 
 class Empresa(Base):
     __tablename__ = "empresas"
+    __table_args__ = {"extend_existing":True}
 
     id = Column(Integer, primary_key=True, index=True)
     nome = Column(String, nullable=False)
@@ -19,6 +20,7 @@ class Empresa(Base):
 
 class ObrigacaoAcessoria(Base):
     __tablename__ = "empresas"
+    __table_args__ = {"extend_existing":True}
 
     id = Column(Integer, primary_key=True, index=True)
     nome = Column(String, nullable=False)
