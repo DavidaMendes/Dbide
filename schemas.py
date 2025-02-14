@@ -6,7 +6,7 @@ class EmpresaBase(BaseModel):
     cnpj: str
     endereco: str
     email: str
-    telefonde: str
+    telefone: str
 
 
 class Empresa(EmpresaBase):
@@ -20,10 +20,17 @@ class EmpresaCreate(EmpresaBase):
     pass
 
 
+class EmpresaUpdate(BaseModel):
+    nome: str
+    endereco: str
+    email: str
+    telefone: str
+
+
 class ObrigacaoAcessoriaBase(BaseModel):
     nome: str
     periodicidade: str
-    empresa_id: str
+    empresa_id: int
 
 
 class ObrigacaoAcessoria(ObrigacaoAcessoriaBase):
@@ -34,4 +41,8 @@ class ObrigacaoAcessoria(ObrigacaoAcessoriaBase):
 
 
 class ObrigacaoAcessoriaCreate(ObrigacaoAcessoriaBase):
-    pass 
+    pass
+
+
+class ObrigacaoAcessoriaUpdate(ObrigacaoAcessoriaBase):
+    pass

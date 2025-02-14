@@ -1,10 +1,12 @@
 from fastapi import FastAPI
-from routes import router
 from fastapi.responses import RedirectResponse
+
+from routes import EmpresaRoutes, ObrigacaoAcessoriaRoutes
 
 app = FastAPI()
 
-app.include_router(router)
+app.include_router(EmpresaRoutes.router)
+app.include_router(ObrigacaoAcessoriaRoutes.router)
 
 
 @app.get("/")
